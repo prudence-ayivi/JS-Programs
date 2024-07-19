@@ -1,0 +1,100 @@
+#React Text Append
+
+Code dans App.js :
+
+```javascript
+import React, { useState } from "react";
+import './App.css';
+import TextField from "./components/textField";
+import 'h8k-components';
+
+const title = "Text Append";
+
+function App() {
+  return (
+    <div>
+      <h8k-navbar header={title}></h8k-navbar>
+      <div className="layout-row align-items-centre justify-content-center mt-50">
+        <section className="layout-column">
+          <div data-testid="first-text">
+            <TextField labelText={'First Text'} onChange={null}/>
+          </div >
+          <div data-testid="second-text">
+            <TextField labelText={'Second Text'} onChange={null}/>
+          </div>
+          <label className="mt-50 text-align-center">
+            Appended Text is:
+          </label>
+          <label className="mt-10 finalText" data-testid="final-text">
+
+          </label>
+        </section>
+      </div>
+    </div>
+  );
+}
+
+export default App; 
+```
+
+---------------- 
+
+Code dans dans le composant index.js :
+
+```javascript
+import React from "react";
+import "./index.css";
+
+function TextField ({labelText, onChange}) {
+
+  return (
+    <div className="textfield">
+        <label data-testid="label"> </label>
+        <input data-testid="input" onChange={null}></input>
+    </div>
+  );
+}
+
+export default TextField;
+```
+#Insctruction 
+
+Create a Text Append module as shown below:
+
+input field : First Text 
+input field : Second Text 
+Appended Text is: First Text  + Second Text 
+
+There is a reusable component in the module named TextField:
+- It renders a <label> and an <input> elements.
+- It receives 2 props -
+    - labelText - The text to be rendered in <label> element.
+    - onChange - The event handler onChange function to be called on <input> element change.
+
+The module must have the following functionalities:
+
+- It renders 2 TextField components. The first is used for the first text, and the second is for the second text.
+- As values are entered in the text fields, concatenate the texts, separated by a space, and render the result inside <label data-testid="final-text">.
+
+The following data-testid attributes are required in the component for the tests to pass:
+- The final appended text label: 'final-text'
+- The div containing first TextField component: 'first-text'
+- The div containing second TextField component: 'second-text'
+- Inside the TextField component:
+    - label element: 'label'
+    - input element: 'input'
+
+Please note that the component has these data-testid attributes for test cases, certain classes and ids for rendering purposes. They should not be changed.
+
+##Software Instructions
+The question(s) requires Node 18 LTS or above.
+Download & Install Node.JS
+
+###Git Instructions
+Use the following commands to work with this project
+Run
+npm start
+Test
+npm test
+Install
+npm install

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Size Element</title>
+</head>
+
+<body>
+
+    <style>
+        .element {
+            /* Base styles for the element */
+            width: 250px;
+            /* Initial width */
+            height: 250px;
+            /* Initial height */
+            border-radius: 50%;
+            background-color: green;
+            position: absolute;
+            top: 30%;
+            left: 40%;
+            border: 1px solid black;
+        }
+
+        .element:hover {
+            /* Styles applied when the mouse hovers over the element */
+            transform: scale(2);
+            /* Double the size using scale transform */
+            border: 2px solid red;
+        }
+    </style>
+    <div class="element">
+    </div>
+</body>
+
+</html>
